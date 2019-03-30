@@ -58,7 +58,33 @@ public class FileNotFound_ReadText {
 		}
 		
 		
-// SHOW SPLIT TEXT FINAL		
+// SHOW SPLIT TEXT FINAL - 2D LOOP		
+		try {
+			String path = "C:\\Users\\Minh\\workspace\\FinalExam\\text.txt";		
+			File file = new File(path);
+			FileReader fileRead = new FileReader (file);
+			BufferedReader buffRead = new BufferedReader (fileRead);			
+			String text = null;
+			while ((text = buffRead.readLine())!= null) {	
+				String[] splitDash=text.split("-");
+				for (int i=0;  i<splitDash.length;  i++) {
+					String[] splitComma = splitDash[i].split(",");//2nd split(Comma) included 1st split (Dash
+					for (int j=0;  j<splitComma.length;  j++) {
+						System.out.println(splitComma[j]);
+					}
+				}	
+			}
+	        buffRead.close();
+	        System.out.println();System.out.println();
+		} 
+		catch (IOException e) {
+			System.out.println("File Does Not Exist");
+			System.out.println();System.out.println();
+		}
+		
+		
+		
+// SHOW SPLIT TEXT FINAL - FOR EACH LOOP - BETTER LESS CODE
 		try {
 			String path = "C:\\Users\\Minh\\workspace\\FinalExam\\text.txt";		
 			File file = new File(path);
@@ -66,18 +92,21 @@ public class FileNotFound_ReadText {
 			BufferedReader buffRead = new BufferedReader (fileRead);			
 			String text = null;
 	        while ((text = buffRead.readLine())!= null) {	
-	            String[] splitDash=text.split("-");
-				for (int i=0;  i<splitDash.length;  i++) {
-					String[] splitComma = splitDash[i].split(",");	
-					for (int j=0;  j<splitComma.length;  j++) {
-						System.out.println(splitComma[j]);
-					}
-				}	
-	        }
+	        	String[] splitDash=text.split("-");
+	    		for (int i=0;  i<splitDash.length;  i++) {
+	    			for (String item: splitDash[i].split(",")) {
+	    				System.out.println(item);	
+	    			}
+	    		}	
+			}
 			buffRead.close();
-	    } catch (IOException e) {System.out.println("File Does Not Exist");}
+		} catch (IOException e) {System.out.println("File Does Not Exist");}
 	}	
 } 
+
+
+
+
 
 	
 
