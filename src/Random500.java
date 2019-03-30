@@ -2,7 +2,7 @@
 import java.util.Random;
 import java.util.Scanner;
 import java.util.TreeSet;
-public class RandomMore {
+public class Random500 {
 	public static void main(String[] args) {
 
 // RANDOM FROM NUMBER		
@@ -37,7 +37,7 @@ public class RandomMore {
 		System.out.println("SORTED to TREE SET (always GENERATE 100 numbers):");
 		TreeSet<Integer> treeSet = new TreeSet<>(); 
 		for (int i=0;i<100; i++) {
-			while (treeSet.size() !=100) {    //set size always = 100
+			while (treeSet.size() !=100) {    			//set size always = 100
 				int r = random.nextInt(900)+100;
 				treeSet.add(r);
 			}	
@@ -53,7 +53,7 @@ public class RandomMore {
 			System.out.println(arrayConverted[i]);
 		}
 		
-		while (1==1) {	//always generate enough 100
+		while (1==1) {									//always generate enough 100
 			System.out.println("Pick rank smallest from 1 to 10:");	
 			Scanner input = new Scanner (System.in);
 			int rank = input.nextInt(); 
@@ -65,10 +65,3 @@ public class RandomMore {
 		}
 	}
 }
-
-// convert array in Tree to Object [] type, not Integer[] type;
-//https://stackoverflow.com/questions/2686092/java-get-index-of-key-in-hashmap
-//hashmap cant index, must convert to Object[] first,
-//https://programming.guide/java/generate-random-character.html
-//https://stackoverflow.com/questions/8400281/whats-the-difference-between-an-object-array-and-an-string-array
-
